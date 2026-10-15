@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useI18n } from "@/components/Language";
 import { openDifyWidget } from "@/lib/dify";
 import { btnPrimary, btnSecondary, container, ctaRow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 export function CtaBand({ variant }: { variant: "ready" | "industry" }) {
   const { t } = useI18n();
@@ -14,8 +15,12 @@ export function CtaBand({ variant }: { variant: "ready" | "industry" }) {
     <section className={sectionY}>
       <div className={container}>
         <div className="rounded-3xl border border-[#334155] bg-[#1E293B] bg-[radial-gradient(ellipse_at_50%_0,rgba(139,92,246,0.35),transparent_70%)] px-[30px] py-[70px] text-center max-[560px]:px-5 max-[560px]:py-11">
-          <h2 className="mb-3.5 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">{title}</h2>
-          <p className="mx-auto mb-7 max-w-[34em] text-[#CBD5E1]">{body}</p>
+          <h2 className="mb-3.5 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">
+            <WrapText text={title} variant="title" />
+          </h2>
+          <p className="mx-auto mb-7 max-w-[34em] text-[#CBD5E1]">
+            <WrapText text={body} variant="copy" />
+          </p>
           <div className={`${ctaRow} justify-center`}>
             <Link href="/pricing#contact" className={btnPrimary}>
               {t.cta.primary}

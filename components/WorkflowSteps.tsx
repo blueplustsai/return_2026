@@ -3,6 +3,7 @@
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { card, container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 export function WorkflowSteps({ variant }: { variant: "home" | "cases" }) {
   const { t } = useI18n();
@@ -27,8 +28,12 @@ export function WorkflowSteps({ variant }: { variant: "home" | "cases" }) {
                 <div className="text-[40px] font-extrabold leading-none">
                   <span className="grad-text">{step.n}</span>
                 </div>
-                <h3 className="mb-2.5 mt-3.5 text-[19px] font-bold">{step.title}</h3>
-                <p className="text-[#CBD5E1]">{step.body}</p>
+                <h3 className="mb-2.5 mt-3.5 text-[19px] font-bold">
+                  <WrapText text={step.title} variant="title" />
+                </h3>
+                <p className="text-[#CBD5E1]">
+                  <WrapText text={step.body} variant="copy" />
+                </p>
               </article>
             </Reveal>
           ))}

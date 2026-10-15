@@ -7,6 +7,7 @@ import type { LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { card, container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 const icons: Record<string, LucideIcon> = {
   ec: ShoppingCart,
@@ -81,13 +82,17 @@ export function UseCasesSection({ variant }: { variant: "home" | "page" }) {
           >
             <article className={card}>
               <h3 className="mb-2.5 text-[19px] font-bold text-[#CBD5E1]">{t.problemLabel}</h3>
-              <p className="text-[#CBD5E1]">{current.problem}</p>
+              <p className="text-[#CBD5E1]">
+                <WrapText text={current.problem} variant="copy" />
+              </p>
             </article>
             <article className={`${card} border-[#6366F1]`}>
               <h3 className="mb-2.5 text-[19px] font-bold">
                 <span className="grad-text">{t.solutionLabel}</span>
               </h3>
-              <p className="text-[#CBD5E1]">{current.solution}</p>
+              <p className="text-[#CBD5E1]">
+                <WrapText text={current.solution} variant="copy" />
+              </p>
               <div className="mt-3">
                 {current.tags.map((tag) => (
                   <span

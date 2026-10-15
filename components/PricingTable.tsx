@@ -49,17 +49,14 @@ export function PricingTable() {
           })}
         </div>
         <div className="mt-[50px] overflow-x-auto max-[820px]:hidden">
-          <table className="w-full border-collapse text-[15px]">
+          <table className="compare-table w-full border-collapse text-[15px]">
             <thead>
               <tr>
-                <th className="border-b border-[#334155] p-3.5 text-left align-top font-semibold text-white">
+                <th className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
                   {t.pricing.compareItem}
                 </th>
                 {t.plans.map((plan) => (
-                  <th
-                    key={plan.id}
-                    className="border-b border-[#334155] p-3.5 text-left align-top font-semibold text-white"
-                  >
+                  <th key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
                     {plan.name}
                   </th>
                 ))}
@@ -67,21 +64,21 @@ export function PricingTable() {
             </thead>
             <tbody>
               <tr>
-                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold text-white">
+                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
                   {t.pricing.comparePosition}
                 </th>
                 {t.plans.map((plan) => (
-                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top text-[#CBD5E1]">
+                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top">
                     {plan.positioning}
                   </td>
                 ))}
               </tr>
               <tr>
-                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold text-white">
+                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
                   {t.pricing.compareIncludes}
                 </th>
                 {t.plans.map((plan) => (
-                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top text-[#CBD5E1]">
+                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top">
                     {plan.items.map((item) => (
                       <span key={item} className="block">
                         {item}
@@ -91,11 +88,11 @@ export function PricingTable() {
                 ))}
               </tr>
               <tr>
-                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold text-white">
+                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
                   {t.pricing.compareTimeline}
                 </th>
                 {t.plans.map((plan) => (
-                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top text-[#CBD5E1]">
+                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top">
                     {plan.timeline}
                   </td>
                 ))}

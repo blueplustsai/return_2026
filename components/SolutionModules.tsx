@@ -4,6 +4,7 @@ import { IconTile } from "@/components/IconTile";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { card, container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 export function SolutionModules() {
   const { t } = useI18n();
@@ -25,11 +26,13 @@ export function SolutionModules() {
                 <IconTile className="size-[58px] text-2xl font-extrabold">{module.id}</IconTile>
                 <div>
                   <p className={eyebrow}>{module.kicker}</p>
-                  <h3 className="mb-3 mt-1.5 text-[22px] font-bold">{module.title}</h3>
+                  <h3 className="mb-3 mt-1.5 text-[22px] font-bold">
+                    <WrapText text={module.title} variant="title" />
+                  </h3>
                   <ul>
                     {module.points.map((point) => (
                       <li key={point} className="py-1 text-[#CBD5E1]">
-                        ✓ {point}
+                        ✓ <WrapText text={point} variant="copy" />
                       </li>
                     ))}
                   </ul>

@@ -7,6 +7,7 @@ import { IconTile } from "@/components/IconTile";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 const icons: LucideIcon[] = [MessageCircle, Workflow, Tags, Plug];
 
@@ -35,8 +36,12 @@ export function FeatureGrid({ variant }: { variant: "home" | "solutions" }) {
                   <IconTile>
                     <Icon size={22} aria-hidden="true" />
                   </IconTile>
-                  <h3 className="mb-2 mt-3.5 text-[19px] font-bold">{feature.title}</h3>
-                  <p className="text-[#CBD5E1]">{feature.body}</p>
+                  <h3 className="mb-2 mt-3.5 text-[19px] font-bold">
+                    <WrapText text={feature.title} variant="title" />
+                  </h3>
+                  <p className="text-[#CBD5E1]">
+                    <WrapText text={feature.body} variant="copy" />
+                  </p>
                 </article>
               </Reveal>
             );

@@ -163,6 +163,43 @@ select {
   font-size: 14px;
 }
 
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+p,
+li,
+td,
+th {
+  text-wrap: pretty;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.wrap-title {
+  text-wrap: balance;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.wrap-copy {
+  text-wrap: pretty;
+  word-break: keep-all;
+  line-break: strict;
+}
+
+.compare-table th {
+  color: #f8fafc;
+}
+
+.compare-table td {
+  color: #e2e8f0;
+}
+
 .field:focus-visible {
   border-color: #8b5cf6;
   outline: none;

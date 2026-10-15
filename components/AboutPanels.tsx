@@ -7,6 +7,7 @@ import { IconTile } from "@/components/IconTile";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { card, container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 const icons: LucideIcon[] = [Monitor, Radio, Sparkles];
 
@@ -30,8 +31,12 @@ export function AboutAdvantages() {
                   <IconTile>
                     <Icon size={22} aria-hidden="true" />
                   </IconTile>
-                  <h3 className="mb-2.5 mt-3.5 text-[19px] font-bold">{item.title}</h3>
-                  <p className="text-[#CBD5E1]">{item.body}</p>
+                  <h3 className="mb-2.5 mt-3.5 text-[19px] font-bold">
+                    <WrapText text={item.title} variant="title" />
+                  </h3>
+                  <p className="text-[#CBD5E1]">
+                    <WrapText text={item.body} variant="copy" />
+                  </p>
                 </article>
               </Reveal>
             );

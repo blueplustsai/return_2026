@@ -18,7 +18,7 @@ const zh = {
     secondary: "體驗 AI 導覽助手",
     readyTitle: "準備好讓 AI 成為你的數位員工了嗎？",
     readyBody:
-      "30 分鐘免費健檢，我們會盤點你的流程與資料，告訴你最值得先自動化的一件事。",
+      "30 分鐘免費健檢，我們會盤點你的流程與資料，|告訴你最值得先自動化的一件事。",
     industryTitle: "沒看到你的產業？",
     industryBody: "每家公司的流程都不一樣，聊 30 分鐘，我們幫你找出最適合的切入點。",
   },
@@ -55,20 +55,20 @@ const zh = {
   },
   features: [
     {
-      title: "企業私有知識庫與 AI 客服",
-      body: "串接 LINE OA / 網站 Widget，打造不幻覺的專屬 AI 專家。",
+      title: "企業私有知識庫與 |AI 客服",
+      body: "串接 LINE OA / 網站 Widget，|打造不幻覺的專屬 AI 專家。",
     },
     {
-      title: "企業營運與 AI 工作流自動化",
-      body: "行政流程節點化，會議記錄自動提煉與任務派發。",
+      title: "企業營運與 AI|工作流自動化",
+      body: "行政流程節點化，|會議記錄自動提煉|與任務派發。",
     },
     {
-      title: "數據資產化與自動清洗貼標",
-      body: "非結構化對話/商品描述自動轉 JSON 結構化數據。",
+      title: "數據資產化與|自動清洗貼標",
+      body: "非結構化對話/商品描述|自動轉 JSON 結構化數據。",
     },
     {
-      title: "既有系統與 IoT 設備 AI 賦能",
-      body: "舊系統 API 外掛升級，IoT 異常數據秒變白話排障指南。",
+      title: "既有系統與 IoT 設備|AI 賦能",
+      body: "舊系統 API 外掛升級，|IoT 異常數據|秒變白話排障指南。",
     },
   ],
   featureHome: {
@@ -82,10 +82,10 @@ const zh = {
     title: "核心服務總覽",
   },
   steps: [
-    { n: "01", title: "需求診斷", body: "評估現有工作流程與資料庫結構。" },
-    { n: "02", title: "PoC 概念驗證", body: "2 週內快速搭建原型，驗證可行性。" },
-    { n: "03", title: "系統整合部署", body: "透過 API / Dify 串接既有 LINE OA 或企業系統。" },
-    { n: "04", title: "持續優化維護", body: "模型校正、知識庫更新與技術支援。" },
+    { n: "01", title: "需求診斷", body: "評估現有工作流程|與資料庫結構。" },
+    { n: "02", title: "PoC 概念驗證", body: "2 週內快速搭建原型，|驗證可行性。" },
+    { n: "03", title: "系統整合部署", body: "透過 API / Dify 串接|既有 LINE OA |或企業系統。" },
+    { n: "04", title: "持續優化維護", body: "模型校正、知識庫更新|與技術支援。" },
   ],
   processHome: {
     eyebrow: "PROCESS",
@@ -160,28 +160,28 @@ const zh = {
     {
       id: "A",
       kicker: "RAG & Engagement",
-      title: "企業專屬 AI 客服與行銷自動化",
+      title: "企業專屬 AI 客服|與行銷自動化",
       points: ["支援 PDF、Word、Excel 快速導入", "向量資料庫檢索（RAG）", "多語系即時翻譯", "行銷文案自動產出"],
       tags: ["LINE 購物助手", "官網 24h 智能客服", "跨境電商多語系客服"],
     },
     {
       id: "B",
       kicker: "AI Workflow",
-      title: "企業營運與工作流自動化",
+      title: "企業營運|與工作流自動化",
       points: ["Dify 可視化工作流編排", "跨系統 API 串接", "智能單據辨識 (OCR)", "HR/行政問答助手"],
       tags: ["發票/報價單自動入庫", "會議語音轉摘要並派發 Trello/Asana 任務"],
     },
     {
       id: "C",
       kicker: "Data Assetization",
-      title: "數據資產化與清洗貼標",
+      title: "數據資產化|與清洗貼標",
       points: ["大量商品自動打標分類", "客戶對話意圖萃取", "NL2SQL（白話文轉資料庫查詢）"],
       tags: ["電商上萬筆商品屬性自動標籤", "老闆白話文問財報數據"],
     },
     {
       id: "D",
       kicker: "System & IoT AI",
-      title: "既有系統與 IoT 設備 AI 升級",
+      title: "既有系統與 IoT 設備|AI 升級",
       points: ["中介層 API 設計", "邊緣設備數據解讀", "維修手冊 AI 比對"],
       tags: ["舊 ERP 系統增強 AI 搜尋", "產線 IoT 警報即時推播「白話文故障排除建議」"],
     },
@@ -253,7 +253,7 @@ const zh = {
     },
     {
       title: "IoT 軟硬整合背景",
-      body: "熟悉邊緣數據與雲端 AI 結合架構，技術護城河高。",
+      body: "熟悉邊緣數據與雲端 AI 結合架構，|技術護城河高。",
     },
     {
       title: "Powered by Dify & LLMs",

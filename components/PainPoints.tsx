@@ -4,6 +4,7 @@ import { Check, X } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
 import { container, eyebrow, sectionY } from "@/lib/styles";
+import { WrapText } from "@/components/WrapText";
 
 export function PainPoints() {
   const { t } = useI18n();
@@ -22,7 +23,9 @@ export function PainPoints() {
             {t.pain.old.map((item) => (
               <div key={item} className="flex min-h-[84px] items-start gap-3 border-t border-[#334155] py-4 text-[#CBD5E1]">
                 <X className="mt-1 size-[18px] shrink-0" aria-hidden="true" strokeWidth={2.4} />
-                <span>{item}</span>
+                <span>
+                  <WrapText text={item} variant="copy" />
+                </span>
               </div>
             ))}
           </div>
@@ -31,7 +34,9 @@ export function PainPoints() {
             {t.pain.new.map((item) => (
               <div key={item} className="flex min-h-[84px] items-start gap-3 border-t border-[#334155] py-4 text-[#F1F5F9]">
                 <Check className="mt-1 size-[18px] shrink-0 text-[#60A5FA]" aria-hidden="true" strokeWidth={2.4} />
-                <span>{item}</span>
+                <span>
+                  <WrapText text={item} variant="copy" />
+                </span>
               </div>
             ))}
           </div>

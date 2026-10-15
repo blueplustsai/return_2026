@@ -14,9 +14,9 @@ export function Hero() {
   const { t } = useI18n();
 
   return (
-    <section className="hero-surface relative flex min-h-[clamp(560px,calc(100vh-68px),860px)] items-center overflow-hidden max-[820px]:min-h-0">
+    <section className="hero-surface relative flex min-h-[calc(80vh-48px)] items-center overflow-hidden max-[820px]:min-h-0">
       <HeroCanvas />
-      <div className={`${container} pointer-events-none relative z-[1] grid grid-cols-[1.1fr_0.9fr] items-center gap-12 py-[60px] max-[820px]:grid-cols-1 max-[820px]:py-14`}>
+      <div className={`${container} pointer-events-none relative z-[1] grid grid-cols-[1.1fr_0.9fr] items-center gap-12 py-10 max-[820px]:grid-cols-1 max-[820px]:py-14`}>
         <div className="pointer-events-auto">
           <h1 className="text-[clamp(30px,4.2vw,56px)] font-extrabold leading-[1.25]">
             {t.home.before}
