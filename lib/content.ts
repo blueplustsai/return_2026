@@ -219,12 +219,14 @@ const zh = {
   ],
   pricing: {
     timelineLabel: "交付時程",
-    price: "價格：洽詢報價",
+    setupLabel: "建置（未稅）",
     recommend: "推薦",
     compareItem: "方案項目",
     comparePosition: "定位",
     compareIncludes: "主要內容",
     compareTimeline: "交付時程",
+    comparePrice: "參考價格",
+    priceNote: "以上為參考範圍，實際報價依需求評估；AI 模型用量與 LINE 官方帳號月費另計。",
   },
   plans: [
     {
@@ -233,6 +235,10 @@ const zh = {
       positioning: "快速驗證可行性",
       items: ["單一私有知識庫建置（RAG）", "LINE OA 或 Web Widget 串接", "1 條核心流程驗證"],
       timeline: "1 ~ 2 週",
+      setup: "NT$30,000–60,000",
+      setupSuffix: "",
+      monthlyLabel: "維運",
+      monthly: "NT$1,500–5,000／月",
       cta: "立即申請 PoC",
     },
     {
@@ -241,6 +247,10 @@ const zh = {
       positioning: "完整客服/工作流導入",
       items: ["完整 Dify AI 工作流部署", "多渠道串接 (LINE/FB/Web)", "單據辨識 / 資料自動貼標"],
       timeline: "3 ~ 4 週",
+      setup: "NT$80,000–200,000",
+      setupSuffix: "",
+      monthlyLabel: "維運",
+      monthly: "NT$5,000–15,000／月",
       cta: "預約方案諮詢",
     },
     {
@@ -249,6 +259,10 @@ const zh = {
       positioning: "跨系統 API / IoT 整合",
       items: ["既有 ERP/CRM API 深度串接", "IoT / 數據庫 NL2SQL 串接", "專屬顧問與長期維護"],
       timeline: "視專案範疇彈性規劃",
+      setup: "NT$300,000",
+      setupSuffix: "起，依需求報價",
+      monthlyLabel: "維運合約",
+      monthly: "NT$15,000／月起",
       cta: "聯繫架構師",
     },
   ],
@@ -539,12 +553,15 @@ const en: typeof zh = {
   ],
   pricing: {
     timelineLabel: "Delivery",
-    price: "Price: on request",
+    setupLabel: "Setup (before tax)",
     recommend: "Recommended",
     compareItem: "Item",
     comparePosition: "Fit",
     compareIncludes: "What's included",
     compareTimeline: "Delivery",
+    comparePrice: "Guide price",
+    priceNote:
+      "These ranges are a guide. The final quote depends on the scope. AI model usage and the LINE official account monthly fee are billed separately.",
   },
   plans: [
     {
@@ -553,6 +570,10 @@ const en: typeof zh = {
       positioning: "Prove it quickly",
       items: ["One private knowledge base（RAG）", "LINE OA or web widget", "One core flow validated"],
       timeline: "1–2 weeks",
+      setup: "NT$30,000–60,000",
+      setupSuffix: "",
+      monthlyLabel: "Care",
+      monthly: "NT$1,500–5,000/mo",
       cta: "Apply for a PoC",
     },
     {
@@ -561,6 +582,10 @@ const en: typeof zh = {
       positioning: "Support and workflows, end to end",
       items: ["A full Dify workflow", "LINE, Facebook, and web", "Document capture and auto-labeling"],
       timeline: "3–4 weeks",
+      setup: "NT$80,000–200,000",
+      setupSuffix: "",
+      monthlyLabel: "Care",
+      monthly: "NT$5,000–15,000/mo",
       cta: "Book a plan consult",
     },
     {
@@ -569,6 +594,10 @@ const en: typeof zh = {
       positioning: "APIs across systems, plus IoT",
       items: ["ERP / CRM API integration", "IoT and NL2SQL", "A dedicated advisor and ongoing care"],
       timeline: "Scoped to the project",
+      setup: "NT$300,000",
+      setupSuffix: "and up, quoted to scope",
+      monthlyLabel: "Care contract",
+      monthly: "NT$15,000/mo and up",
       cta: "Talk to an architect",
     },
   ],

@@ -39,7 +39,19 @@ export function PricingTable() {
                   </ul>
                   <p className="text-sm text-[#CBD5E1]">{t.pricing.timelineLabel}</p>
                   <p className="mt-1.5 text-[22px] font-bold">{plan.timeline}</p>
-                  <p className="mb-[18px] mt-2 text-sm text-[#CBD5E1]">{t.pricing.price}</p>
+                  <div className="mb-[18px] mt-4">
+                    <p className="text-sm text-[#CBD5E1]">{t.pricing.setupLabel}</p>
+                    <p className="mt-1 text-[26px] font-bold leading-tight">
+                      <span className="whitespace-nowrap tabular-nums">{plan.setup}</span>
+                      {plan.setupSuffix ? (
+                        <span className="ml-1.5 text-[18px] font-semibold">{plan.setupSuffix}</span>
+                      ) : null}
+                    </p>
+                    <p className="mt-1 text-[20px] font-semibold leading-tight text-[#E2E8F0]">
+                      <span className="mr-1.5 text-sm font-normal text-[#CBD5E1]">{plan.monthlyLabel}</span>
+                      <span className="whitespace-nowrap tabular-nums">{plan.monthly}</span>
+                    </p>
+                  </div>
                   <a href="#contact" className={`${recommended ? btnPrimary : btnSecondary} self-start`}>
                     {plan.cta}
                   </a>
@@ -48,6 +60,7 @@ export function PricingTable() {
             );
           })}
         </div>
+        <p className="mt-6 text-sm leading-relaxed text-[#CBD5E1]">{t.pricing.priceNote}</p>
         <div className="mt-[50px] overflow-x-auto max-[820px]:hidden">
           <table className="compare-table w-full border-collapse text-[15px]">
             <thead>
@@ -84,6 +97,22 @@ export function PricingTable() {
                         {item}
                       </span>
                     ))}
+                  </td>
+                ))}
+              </tr>
+              <tr>
+                <th scope="row" className="border-b border-[#334155] p-3.5 text-left align-top font-semibold">
+                  {t.pricing.comparePrice}
+                </th>
+                {t.plans.map((plan) => (
+                  <td key={plan.id} className="border-b border-[#334155] p-3.5 text-left align-top">
+                    <span className="block whitespace-nowrap tabular-nums">
+                      {plan.setup}
+                      {plan.setupSuffix ? ` ${plan.setupSuffix}` : ""}
+                    </span>
+                    <span className="mt-1 block whitespace-nowrap tabular-nums">
+                      {plan.monthlyLabel} {plan.monthly}
+                    </span>
                   </td>
                 ))}
               </tr>
