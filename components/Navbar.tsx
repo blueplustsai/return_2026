@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,11 +16,16 @@ const links = [
   { href: "/about", key: "about" },
 ] as const;
 
-function LogoMark() {
+function LogoMark({ priority = false }: { priority?: boolean }) {
   return (
-    <span className="grid h-[34px] w-[84px] place-items-center rounded-lg border-[1.5px] border-dashed border-[#64748B] text-xs font-bold tracking-[0.15em] text-[#CBD5E1]">
-      LOGO
-    </span>
+    <Image
+      src="/return-logo.png"
+      alt="Return"
+      width={196}
+      height={171}
+      priority={priority}
+      className="block h-10 w-auto"
+    />
   );
 }
 
@@ -54,7 +60,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[rgba(148,163,184,0.12)] bg-[rgba(15,23,42,0.82)] backdrop-blur-[12px]">
       <div className={`${container} flex h-[68px] items-center justify-between`}>
         <Link href="/" aria-label={t.nav.home} className="inline-flex">
-          <LogoMark />
+          <LogoMark priority />
         </Link>
         <nav className="hidden items-center gap-7 text-[15px] text-[#CBD5E1] min-[901px]:flex" aria-label={t.nav.main}>
           {links.map((link) => {
