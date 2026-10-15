@@ -4,7 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { PricingTable } from "@/components/PricingTable";
 
 export const metadata: Metadata = {
-  title: "方案價格｜AI 轉型服務",
+  title: "方案價格",
   description: "三種方案，依導入深度選擇。價格依專案範疇報價。",
 };
 

@@ -8,7 +8,7 @@ import { UseCasesSection } from "@/components/UseCasesSection";
 import { WorkflowSteps } from "@/components/WorkflowSteps";
 
 export const metadata: Metadata = {
-  title: "首頁｜AI 轉型服務",
+  title: { absolute: "首頁 | 芮騰數位科技" },
   description: "把沉睡的企業資料，變成 24 小時不休息的 AI 數位員工。",
 };
 

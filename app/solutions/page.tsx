@@ -5,7 +5,7 @@ import { PageHero } from "@/components/PageHero";
 import { SolutionModules } from "@/components/SolutionModules";
 
 export const metadata: Metadata = {
-  title: "解決方案｜AI 轉型服務",
+  title: "解決方案",
   description: "從 AI 客服（RAG）到 IoT 升級，每個模組都能單獨導入，也能串成完整工作流。",
 };
 
