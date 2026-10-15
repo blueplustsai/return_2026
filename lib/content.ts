@@ -279,7 +279,7 @@ const zh = {
     sending: "送出中…",
   },
   form: {
-    ok: "欄位已通過驗證。此為示意表單，尚未寄出通知。",
+    ok: "已收到你的預約，我們會盡快與你聯繫。",
     name: "請填寫姓名（80 字以內）。",
     company: "公司名稱請勿超過 120 字。",
     email: "請填寫有效的 Email。",
@@ -614,7 +614,7 @@ const en: typeof zh = {
     sending: "Sending…",
   },
   form: {
-    ok: "The fields checked out. This demo form does not send a notification yet.",
+    ok: "We received your request and will reply soon.",
     name: "Please enter a name (80 characters or fewer).",
     company: "Company name must be 120 characters or fewer.",
     email: "Please enter a valid email.",
