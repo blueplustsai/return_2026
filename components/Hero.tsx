@@ -22,7 +22,7 @@ export function Hero() {
             {t.home.before}
             <br />
             {t.home.mid}
-            <span className="grad-text">{t.home.accent}</span>
+            <span className="grad-text whitespace-nowrap">{t.home.accent}</span>
           </h1>
           <p className="mb-[34px] mt-[22px] max-w-[36em] text-lg leading-[1.7] text-[#CBD5E1] max-[820px]:text-base">
             {t.home.sub[0]}

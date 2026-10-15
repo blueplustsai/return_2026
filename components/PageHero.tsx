@@ -17,7 +17,7 @@ export function PageHero({ page }: { page: PageKey }) {
         <p className={eyebrow}>{content.eyebrow}</p>
         <h1 className="mt-2 text-[clamp(28px,3.4vw,44px)] font-extrabold leading-[1.25]">
           {content.before}
-          <span className="grad-text">{content.accent}</span>
+          <span className="grad-text whitespace-nowrap">{content.accent}</span>
         </h1>
         <p className="mb-[34px] mt-[22px] max-w-[36em] text-lg leading-[1.7] text-[#CBD5E1] max-[820px]:text-base">
           {content.sub}

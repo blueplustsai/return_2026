@@ -39,7 +39,7 @@ export function ChatScene() {
           <h2 id="chat-scene-title" className="mb-[18px] mt-3 text-[clamp(26px,3vw,38px)] font-bold leading-[1.35]">
             {scene.titleBefore}
             <br />
-            <span className="grad-text">{scene.titleAccent}</span>
+            <span className="grad-text whitespace-nowrap">{scene.titleAccent}</span>
             {scene.titleAfter}
           </h2>
           <p className="max-w-[30em] text-[17px] leading-[1.8] text-[#CBD5E1]">{scene.lead}</p>

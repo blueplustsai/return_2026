@@ -18,14 +18,19 @@ const links = [
 
 function LogoMark({ priority = false }: { priority?: boolean }) {
   return (
-    <Image
-      src="/return-logo.png"
-      alt="Return"
-      width={196}
-      height={171}
-      priority={priority}
-      className="block h-10 w-auto"
-    />
+    <span className="inline-flex items-center gap-2">
+      <Image
+        src="/return-mark.png"
+        alt=""
+        width={181}
+        height={121}
+        priority={priority}
+        className="block h-10 w-auto min-[901px]:h-12"
+      />
+      <span className="whitespace-nowrap text-[13px] font-semibold leading-none text-[#F8FAFC] min-[901px]:text-[15px]">
+        芮騰數位科技
+      </span>
+    </span>
   );
 }
 

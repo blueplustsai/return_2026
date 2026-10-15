@@ -16,7 +16,7 @@ const zh = {
   cta: {
     primary: "預約 30 分鐘免費 AI 轉型健檢",
     secondary: "體驗 AI 導覽助手",
-    readyTitle: "準備好讓 AI 成為你的數位員工了嗎？",
+    readyTitle: "準備好讓 |AI 成為你的數位員工了嗎？",
     readyBody:
       "30 分鐘免費健檢，|我們會盤點你的流程與資料，|告訴你最值得先自動化的一件事。",
     industryTitle: "沒看到你的產業？",
@@ -359,7 +359,7 @@ const en: typeof zh = {
   cta: {
     primary: "Book a free 30-min AI checkup",
     secondary: "Try the AI guide",
-    readyTitle: "Ready for an AI teammate that never clocks out?",
+    readyTitle: "Ready for an |AI teammate |that never clocks out?",
     readyBody:
       "In 30 minutes we review your workflow and data, and point to the first thing worth automating.",
     industryTitle: "Don't see your industry?",
