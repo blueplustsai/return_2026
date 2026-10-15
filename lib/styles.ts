@@ -6,8 +6,6 @@ export const btnPrimary =
 export const btnSecondary =
   "inline-flex cursor-pointer items-center justify-center rounded-[10px] border border-[#475569] bg-transparent px-[26px] py-[14px] text-center text-base font-semibold text-[#E2E8F0] no-underline transition hover:border-[#CBD5E1]";
 
-export const btnSm = "!px-[18px] !py-[9px] !text-sm";
-
 export const ctaRow =
   "flex flex-wrap gap-3 max-[820px]:[&_a]:w-full max-[820px]:[&_button]:w-full";
 

@@ -158,6 +158,11 @@ select {
   color: #f8fafc;
 }
 
+.btn-nav {
+  padding: 9px 18px;
+  font-size: 14px;
+}
+
 .field:focus-visible {
   border-color: #8b5cf6;
   outline: none;

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type MouseEvent } from "react";
 import { useI18n } from "@/components/Language";
-import { btnPrimary, btnSm, container } from "@/lib/styles";
+import { btnPrimary, container } from "@/lib/styles";
 
 const links = [
   { href: "/solutions", key: "solutions" },
@@ -82,7 +82,7 @@ export function Navbar() {
           >
             繁中 / EN
           </button>
-          <Link href="/pricing#contact" onClick={goContact} className={`${btnPrimary} ${btnSm}`}>
+          <Link href="/pricing#contact" onClick={goContact} className={`${btnPrimary} btn-nav`}>
             {t.nav.cta}
           </Link>
         </nav>

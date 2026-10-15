@@ -26,7 +26,7 @@ export function ContactForm() {
           {t.contact.lead}
           <ExampleBadge />
         </p>
-        <form ref={formRef} action={action} className={`${card} grid gap-3.5`} noValidate={false}>
+        <form ref={formRef} action={action} className={`${card} grid gap-3.5`} noValidate>
           <input type="hidden" name="lang" value={lang} />
           <div className="sr-only" aria-hidden="true">
             <label>
