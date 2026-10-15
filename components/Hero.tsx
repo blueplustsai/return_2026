@@ -37,6 +37,21 @@ export function Hero() {
               {t.cta.secondary}
             </button>
           </div>
+          <div className="mt-8 border-t border-[rgba(148,163,184,0.18)] pt-5">
+            <p className="mb-3 text-sm text-[#CBD5E1]">{t.home.industriesPrompt}</p>
+            <div className="flex flex-nowrap items-center gap-2 max-[820px]:gap-1.5">
+              {t.home.industries.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-[rgba(148,163,184,0.3)] bg-[rgba(255,255,255,0.06)] px-3 py-1.5 text-[13px] font-medium leading-none text-[#F8FAFC] transition hover:border-[#8B5CF6] hover:bg-[rgba(139,92,246,0.18)] max-[820px]:px-2 max-[820px]:py-1 max-[820px]:text-[12px]"
+                >
+                  <span aria-hidden="true">{item.icon}</span>
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="pointer-events-auto rounded-[18px] border border-[rgba(148,163,184,0.2)] bg-[rgba(30,41,59,0.55)] p-7 backdrop-blur-[10px] max-[560px]:p-[18px]">
           {t.home.flow.map((node, index) => {

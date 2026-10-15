@@ -16,16 +16,18 @@ export function FeatureGrid({ variant }: { variant: "home" | "solutions" }) {
   const heading = variant === "home" ? t.featureHome : t.featureSolutions;
 
   return (
-    <section className={`${sectionY} ${variant === "home" ? "bg-[#111A2E]" : ""}`}>
+    <section className={`${sectionY} ${variant === "home" ? "bg-[#0F172A]" : ""}`}>
       <div className={container}>
         <Reveal>
-          <p className={eyebrow}>{heading.eyebrow}</p>
-          <h2 className="mb-3.5 mt-2 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">{heading.title}</h2>
-          {variant === "home" ? (
-            <p className="mb-11 max-w-[40em] text-[#CBD5E1]">{t.featureHome.lead}</p>
-          ) : (
-            <div className="h-[30px]" />
-          )}
+          <div className={variant === "home" ? "mx-auto mb-11 max-w-[720px] text-center" : ""}>
+            <p className={eyebrow}>{heading.eyebrow}</p>
+            <h2 className="mb-3.5 mt-2 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">{heading.title}</h2>
+            {variant === "home" ? (
+              <p className="text-[#CBD5E1]">{t.featureHome.lead}</p>
+            ) : (
+              <div className="h-[30px]" />
+            )}
+          </div>
         </Reveal>
         <div className="grid grid-cols-4 gap-[22px] max-[1000px]:grid-cols-2 max-[560px]:grid-cols-1">
           {t.features.map((feature, index) => {
@@ -48,8 +50,8 @@ export function FeatureGrid({ variant }: { variant: "home" | "solutions" }) {
           })}
         </div>
         {variant === "home" ? (
-          <p className="mt-[26px]">
-            <Link href="/solutions" className="inline-flex items-center gap-1 text-[#93C5FD] hover:text-white">
+          <p className="mt-10 text-center">
+            <Link href="/solutions" className="inline-flex items-center gap-1 text-[#A5B4FC] hover:text-white">
               {t.featureHome.more}
               <ArrowRight size={16} aria-hidden="true" />
             </Link>

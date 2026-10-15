@@ -32,7 +32,7 @@ export function ChatScene() {
   const instant = reduce === true;
 
   return (
-    <section className={sectionY} aria-labelledby="chat-scene-title">
+    <section className={`${sectionY} bg-[#111C33]`} aria-labelledby="chat-scene-title">
       <div className={`${container} grid grid-cols-[minmax(0,1fr)_380px] items-center gap-[72px] max-[860px]:grid-cols-1 max-[860px]:gap-10`}>
         <div>
           <p className={eyebrow}>{scene.eyebrow}</p>

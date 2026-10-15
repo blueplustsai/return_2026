@@ -18,7 +18,7 @@ const zh = {
     secondary: "體驗 AI 導覽助手",
     readyTitle: "準備好讓 AI 成為你的數位員工了嗎？",
     readyBody:
-      "30 分鐘免費健檢，我們會盤點你的流程與資料，|告訴你最值得先自動化的一件事。",
+      "30 分鐘免費健檢，|我們會盤點你的流程與資料，|告訴你最值得先自動化的一件事。",
     industryTitle: "沒看到你的產業？",
     industryBody: "每家公司的流程都不一樣，聊 30 分鐘，我們幫你找出最適合的切入點。",
   },
@@ -34,6 +34,12 @@ const zh = {
       { title: "客戶傳來 PDF 報價單", detail: "LINE OA / Email", sample: "" },
       { title: "AI 辨識欄位、比對知識庫", detail: "Dify 工作流 · OCR · RAG", sample: "" },
       { title: "自動入庫 ERP 並回覆客戶", detail: "平均 12 秒完成", sample: "範例數據" },
+    ],
+    industriesPrompt: "你是哪一種企業？直接看你的應用場景",
+    industries: [
+      { href: "/use-cases/#retail", label: "零售電商", icon: "🛒" },
+      { href: "/use-cases/#manufacturing", label: "製造業", icon: "🏭" },
+      { href: "/use-cases/#services", label: "專業服務", icon: "🏢" },
     ],
   },
   pain: {
@@ -136,6 +142,7 @@ const zh = {
   cases: [
     {
       id: "ec",
+      hash: "retail",
       label: "電商與零售業",
       problem: "商品缺乏 Tag、客服重複回答規格。",
       solution: "AI 自動批次清洗貼標 + LINE 專屬 RAG 購物顧問。",
@@ -143,6 +150,7 @@ const zh = {
     },
     {
       id: "mf",
+      hash: "manufacturing",
       label: "傳統製造與工業",
       problem: "進出貨單據大量紙本，IoT 警報缺乏即時處置建議。",
       solution: "單據自動 OCR 辨識入庫 + IoT 結合 AI 維修助理。",
@@ -150,6 +158,7 @@ const zh = {
     },
     {
       id: "ps",
+      hash: "services",
       label: "專業服務與顧問",
       problem: "諮詢量大、合約條款繁雜。",
       solution: "AI 自動篩選高潛力客戶 + 合約法規知識庫助理（RAG）。",
@@ -369,6 +378,12 @@ const en: typeof zh = {
       { title: "AI extracts fields and checks the knowledge base", detail: "Dify workflow · OCR · RAG", sample: "" },
       { title: "It files into the ERP and replies", detail: "Done in about 12 seconds", sample: "範例數據" },
     ],
+    industriesPrompt: "What kind of company are you? Open your scenario.",
+    industries: [
+      { href: "/use-cases/#retail", label: "Retail", icon: "🛒" },
+      { href: "/use-cases/#manufacturing", label: "Manufacturing", icon: "🏭" },
+      { href: "/use-cases/#services", label: "Services", icon: "🏢" },
+    ],
   },
   pain: {
     eyebrow: "PAIN POINTS",
@@ -470,6 +485,7 @@ const en: typeof zh = {
   cases: [
     {
       id: "ec",
+      hash: "retail",
       label: "Retail & e-commerce",
       problem: "Products lack tags, and support repeats the same spec answers.",
       solution: "Batch labeling plus a LINE RAG shopping advisor.",
@@ -477,6 +493,7 @@ const en: typeof zh = {
     },
     {
       id: "mf",
+      hash: "manufacturing",
       label: "Manufacturing",
       problem: "Shipping paperwork is still on paper, and IoT alarms lack a next step.",
       solution: "OCR into the warehouse system, plus an IoT repair assistant.",
@@ -484,6 +501,7 @@ const en: typeof zh = {
     },
     {
       id: "ps",
+      hash: "services",
       label: "Professional services",
       problem: "Too many inquiries, and contracts are hard to scan.",
       solution: "Score promising leads, and answer from a contract knowledge base（RAG）.",

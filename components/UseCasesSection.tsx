@@ -2,7 +2,7 @@
 
 import { Building2, Factory, ShoppingCart } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useState, type KeyboardEvent } from "react";
 import type { LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { useI18n } from "@/components/Language";
@@ -15,11 +15,35 @@ const icons: Record<string, LucideIcon> = {
   ps: Building2,
 };
 
+const hashToId: Record<string, string> = {
+  retail: "ec",
+  manufacturing: "mf",
+  services: "ps",
+};
+
 export function UseCasesSection({ variant }: { variant: "home" | "page" }) {
   const { t } = useI18n();
   const [active, setActive] = useState(t.cases[0]?.id ?? "ec");
   const reduce = useReducedMotion();
   const current = t.cases.find((item) => item.id === active) ?? t.cases[0];
+
+  useEffect(() => {
+    if (variant !== "page") return;
+    const apply = () => {
+      const id = hashToId[window.location.hash.replace("#", "")];
+      if (id) setActive(id);
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
+  }, [variant]);
+
+  const choose = (id: string) => {
+    setActive(id);
+    if (variant !== "page") return;
+    const hash = t.cases.find((item) => item.id === id)?.hash;
+    if (hash) window.history.replaceState(null, "", `#${hash}`);
+  };
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const index = t.cases.findIndex((item) => item.id === active);
@@ -29,7 +53,7 @@ export function UseCasesSection({ variant }: { variant: "home" | "page" }) {
       event.key === "ArrowRight"
         ? t.cases[(index + 1) % t.cases.length]
         : t.cases[(index - 1 + t.cases.length) % t.cases.length];
-    setActive(next.id);
+    choose(next.id);
   };
 
   return (
@@ -37,12 +61,23 @@ export function UseCasesSection({ variant }: { variant: "home" | "page" }) {
       <div className={container}>
         {variant === "home" ? (
           <Reveal>
-            <p className={eyebrow}>{t.useHome.eyebrow}</p>
-            <h2 className="mb-3.5 mt-2 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">{t.useHome.title}</h2>
-            <div className="h-[30px]" />
+            <div className="mx-auto mb-11 max-w-[720px] text-center">
+              <p className={eyebrow}>{t.useHome.eyebrow}</p>
+              <h2 className="mb-3.5 mt-2 text-[clamp(24px,2.8vw,36px)] font-bold leading-[1.3]">{t.useHome.title}</h2>
+            </div>
           </Reveal>
         ) : null}
-        <div role="tablist" aria-label={t.useHome.title} className="mb-[26px] flex flex-wrap gap-2.5" onKeyDown={onKeyDown}>
+        <div
+          role="tablist"
+          aria-label={t.useHome.title}
+          className={`relative mb-[26px] flex flex-wrap gap-2.5 ${variant === "home" ? "justify-center" : ""}`}
+          onKeyDown={onKeyDown}
+        >
+          {variant === "page"
+            ? t.cases.map((item) => (
+                <span key={item.hash} id={item.hash} aria-hidden="true" className="absolute top-0 scroll-mt-24" />
+              ))
+            : null}
           {t.cases.map((item) => {
             const Icon = icons[item.id] ?? ShoppingCart;
             const selected = item.id === active;
@@ -55,7 +90,7 @@ export function UseCasesSection({ variant }: { variant: "home" | "page" }) {
                 aria-selected={selected}
                 aria-controls={`panel-${item.id}`}
                 tabIndex={selected ? 0 : -1}
-                onClick={() => setActive(item.id)}
+                onClick={() => choose(item.id)}
                 className={`inline-flex cursor-pointer items-center gap-2 rounded-full border px-5 py-2.5 text-[15px] ${
                   selected
                     ? "border-transparent bg-gradient-to-r from-[#3B82F6] to-[#8B5CF6] text-white"

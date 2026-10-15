@@ -21,7 +21,7 @@ export default function HomePage() {
       <FeatureGrid variant="home" />
       <WorkflowSteps variant="home" />
       <UseCasesSection variant="home" />
-      <CtaBand variant="ready" />
+      <CtaBand variant="ready" layout="band" />
     </>
   );
 }
