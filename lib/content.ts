@@ -28,7 +28,7 @@ const zh = {
     accent: "AI 數位員工",
     sub: [
       "專為中小企業打造的一站式 AI 轉型解決方案",
-      "自動化工作流 × 企業私有知識庫 × 既有系統 API 無痛升級",
+      "自動化工作流 × 企業私有知識庫（RAG） × 既有系統 API 無痛升級",
     ],
     flow: [
       { title: "客戶傳來 PDF 報價單", detail: "LINE OA / Email", sample: "" },
@@ -48,7 +48,7 @@ const zh = {
       "舊有 ERP/CRM 系統改版昂貴，資料無法自動化。",
     ],
     new: [
-      "24/7 私有知識庫客服，精準解答不幻覺，即時接單。",
+      "24/7 私有知識庫客服（RAG），精準解答不幻覺，即時接單。",
       "智能 OCR + AI 欄位萃取，自動拋轉入庫。",
       "Dify API 外掛無痛串接，舊系統直接升級 AI 運算。",
     ],
@@ -56,7 +56,7 @@ const zh = {
   chatScene: {
     eyebrow: "AI CUSTOMER SERVICE",
     titleBefore: "半夜 11 點的詢問，",
-    titleAccent: "AI 客服",
+    titleAccent: "AI 客服（RAG）",
     titleAfter: "也能接下來",
     lead: "把你的商品型錄、價目表、常見問題交給 AI。客人在 LINE 上問什麼，它只根據你的資料回答，查不到的就轉給真人，不會亂編。",
     points: [
@@ -86,7 +86,7 @@ const zh = {
   },
   features: [
     {
-      title: "企業私有知識庫與 |AI 客服",
+      title: "企業私有知識庫（RAG）|與 AI 客服",
       body: "串接 LINE OA / 網站 Widget，|打造不幻覺的專屬 AI 專家。",
     },
     {
@@ -116,7 +116,7 @@ const zh = {
     { n: "01", title: "需求診斷", body: "評估現有工作流程|與資料庫結構。" },
     { n: "02", title: "PoC 概念驗證", body: "2 週內快速搭建原型，|驗證可行性。" },
     { n: "03", title: "系統整合部署", body: "透過 API / Dify 串接|既有 LINE OA |或企業系統。" },
-    { n: "04", title: "持續優化維護", body: "模型校正、知識庫更新|與技術支援。" },
+    { n: "04", title: "持續優化維護", body: "模型校正、|知識庫更新（RAG）|與技術支援。" },
   ],
   processHome: {
     eyebrow: "PROCESS",
@@ -152,7 +152,7 @@ const zh = {
       id: "ps",
       label: "專業服務與顧問",
       problem: "諮詢量大、合約條款繁雜。",
-      solution: "AI 自動篩選高潛力客戶 + 合約法規知識庫助理。",
+      solution: "AI 自動篩選高潛力客戶 + 合約法規知識庫助理（RAG）。",
       tags: ["客戶篩選", "合約知識庫", "法規助理"],
     },
   ],
@@ -161,7 +161,7 @@ const zh = {
       eyebrow: "SOLUTIONS",
       before: "四大模組，",
       accent: "按需組合",
-      sub: "從 AI 客服到 IoT 升級，每個模組都能單獨導入，也能串成完整工作流。",
+      sub: "從 AI 客服（RAG）到 IoT 升級，每個模組都能單獨導入，也能串成完整工作流。",
     },
     useCases: {
       eyebrow: "USE CASES",
@@ -199,7 +199,7 @@ const zh = {
       id: "B",
       kicker: "AI Workflow",
       title: "企業營運|與工作流自動化",
-      points: ["Dify 可視化工作流編排", "跨系統 API 串接", "智能單據辨識 (OCR)", "HR/行政問答助手"],
+      points: ["Dify 可視化工作流編排", "跨系統 API 串接", "智能單據辨識 (OCR)", "HR/行政問答助手（RAG）"],
       tags: ["發票/報價單自動入庫", "會議語音轉摘要並派發 Trello/Asana 任務"],
     },
     {
@@ -213,7 +213,7 @@ const zh = {
       id: "D",
       kicker: "System & IoT AI",
       title: "既有系統與 IoT 設備|AI 升級",
-      points: ["中介層 API 設計", "邊緣設備數據解讀", "維修手冊 AI 比對"],
+      points: ["中介層 API 設計", "邊緣設備數據解讀", "維修手冊 AI 比對（RAG）"],
       tags: ["舊 ERP 系統增強 AI 搜尋", "產線 IoT 警報即時推播「白話文故障排除建議」"],
     },
   ],
@@ -231,7 +231,7 @@ const zh = {
       id: "poc",
       name: "PoC 輕量體驗包",
       positioning: "快速驗證可行性",
-      items: ["單一私有知識庫建置", "LINE OA 或 Web Widget 串接", "1 條核心流程驗證"],
+      items: ["單一私有知識庫建置（RAG）", "LINE OA 或 Web Widget 串接", "1 條核心流程驗證"],
       timeline: "1 ~ 2 週",
       cta: "立即申請 PoC",
     },
@@ -299,7 +299,7 @@ const zh = {
   stats: [
     { value: "70%", label: "開發時間與成本縮短" },
     { value: "2 週", label: "PoC 原型交付" },
-    { value: "24/7", label: "AI 客服全天候" },
+    { value: "24/7", label: "AI 客服（RAG）全天候" },
     { value: "30+", label: "導入專案數" },
   ],
   footer: {
@@ -348,7 +348,7 @@ const en: typeof zh = {
     accent: "AI teammate",
     sub: [
       "A one-stop AI transformation for small and mid-size businesses",
-      "Automated workflows × private knowledge × painless API upgrades",
+      "Automated workflows × private knowledge（RAG） × painless API upgrades",
     ],
     flow: [
       { title: "A customer sends a PDF quote", detail: "LINE OA / Email", sample: "" },
@@ -368,7 +368,7 @@ const en: typeof zh = {
       "Reworking an old ERP or CRM is expensive, and the data never moves on its own.",
     ],
     new: [
-      "24/7 private-knowledge support that stays on source and can take the order.",
+      "24/7 private-knowledge support（RAG） that stays on source and can take the order.",
       "OCR plus field extraction, then a straight write into your system.",
       "A Dify API add-on that upgrades the old system without a rewrite.",
     ],
@@ -376,7 +376,7 @@ const en: typeof zh = {
   chatScene: {
     eyebrow: "AI CUSTOMER SERVICE",
     titleBefore: "An 11pm question,",
-    titleAccent: "AI support",
+    titleAccent: "AI support（RAG）",
     titleAfter: " still picks it up",
     lead: "Hand over your catalog, price list, and FAQs. On LINE it answers only from your files. If it cannot find an answer, it hands the chat to a person instead of inventing one.",
     points: [
@@ -406,7 +406,7 @@ const en: typeof zh = {
   },
   features: [
     {
-      title: "Private knowledge and AI support",
+      title: "Private knowledge（RAG）| and AI support",
       body: "Connect LINE OA or a site widget and get an expert that stays on your sources.",
     },
     {
@@ -436,7 +436,7 @@ const en: typeof zh = {
     { n: "01", title: "Diagnose", body: "Review the current workflow and how your data is structured." },
     { n: "02", title: "Proof of concept", body: "A working prototype in two weeks, to test the idea." },
     { n: "03", title: "Integrate", body: "Connect LINE OA or your systems through API and Dify." },
-    { n: "04", title: "Keep improving", body: "Model tuning, knowledge updates, and support." },
+    { n: "04", title: "Keep improving", body: "Model tuning, knowledge updates（RAG）, and support." },
   ],
   processHome: {
     eyebrow: "PROCESS",
@@ -472,7 +472,7 @@ const en: typeof zh = {
       id: "ps",
       label: "Professional services",
       problem: "Too many inquiries, and contracts are hard to scan.",
-      solution: "Score promising leads, and answer from a contract knowledge base.",
+      solution: "Score promising leads, and answer from a contract knowledge base（RAG）.",
       tags: ["Lead scoring", "Contract base", "Policy aide"],
     },
   ],
@@ -481,7 +481,7 @@ const en: typeof zh = {
       eyebrow: "SOLUTIONS",
       before: "Four modules, ",
       accent: "combined as needed",
-      sub: "From AI support to IoT upgrades. Start with one module, or chain them into a workflow.",
+      sub: "From AI support（RAG） to IoT upgrades. Start with one module, or chain them into a workflow.",
     },
     useCases: {
       eyebrow: "USE CASES",
@@ -519,7 +519,7 @@ const en: typeof zh = {
       id: "B",
       kicker: "AI Workflow",
       title: "Operations and workflow automation",
-      points: ["Visual Dify workflows", "Cross-system APIs", "Document OCR", "HR and admin Q&A"],
+      points: ["Visual Dify workflows", "Cross-system APIs", "Document OCR", "HR and admin Q&A（RAG）"],
       tags: ["Invoices and quotes filed automatically", "Meeting audio to a summary and a Trello or Asana task"],
     },
     {
@@ -533,7 +533,7 @@ const en: typeof zh = {
       id: "D",
       kicker: "System & IoT AI",
       title: "Upgrade legacy systems and IoT",
-      points: ["An API layer in the middle", "Readings from edge devices", "Match alarms to the repair manual"],
+      points: ["An API layer in the middle", "Readings from edge devices", "Match alarms to the repair manual（RAG）"],
       tags: ["AI search on an old ERP", "Line alarms pushed as plain-language fixes"],
     },
   ],
@@ -551,7 +551,7 @@ const en: typeof zh = {
       id: "poc",
       name: "PoC starter",
       positioning: "Prove it quickly",
-      items: ["One private knowledge base", "LINE OA or web widget", "One core flow validated"],
+      items: ["One private knowledge base（RAG）", "LINE OA or web widget", "One core flow validated"],
       timeline: "1–2 weeks",
       cta: "Apply for a PoC",
     },
@@ -619,7 +619,7 @@ const en: typeof zh = {
   stats: [
     { value: "70%", label: "Less time and cost to build" },
     { value: "2 wks", label: "PoC prototype delivered" },
-    { value: "24/7", label: "AI support coverage" },
+    { value: "24/7", label: "AI support（RAG） coverage" },
     { value: "30+", label: "Projects delivered" },
   ],
   footer: {
