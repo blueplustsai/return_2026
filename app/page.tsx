@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ChatScene } from "@/components/ChatScene";
 import { CtaBand } from "@/components/CtaBand";
 import { FeatureGrid } from "@/components/FeatureGrid";
 import { Hero } from "@/components/Hero";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <>
       <Hero />
       <PainPoints />
+      <ChatScene />
       <FeatureGrid variant="home" />
       <WorkflowSteps variant="home" />
       <UseCasesSection variant="home" />
