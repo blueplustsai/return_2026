@@ -120,13 +120,13 @@ const zh = {
   },
   steps: [
     { n: "01", title: "需求診斷", body: "評估現有工作流程|與資料庫結構。" },
-    { n: "02", title: "PoC 概念驗證", body: "2 週內快速搭建原型，|驗證可行性。" },
+    { n: "02", title: "PoC 概念驗證", body: "兩週內快速搭建原型，|驗證可行性。" },
     { n: "03", title: "系統整合部署", body: "透過 API / Dify 串接|既有 LINE OA |或企業系統。" },
     { n: "04", title: "持續優化維護", body: "模型校正、|知識庫更新（RAG）|與技術支援。" },
   ],
   processHome: {
     eyebrow: "PROCESS",
-    title: "敏捷導入 4 步驟",
+    title: "敏捷導入四步驟",
     lead: "先小規模驗證，再逐步擴大，降低導入風險。",
   },
   processCases: {
@@ -181,7 +181,7 @@ const zh = {
     pricing: {
       eyebrow: "PRICING",
       before: "從 PoC 開始，",
-      accent: "2 週看見成效",
+      accent: "兩週看見成效",
       sub: "三種方案，依導入深度選擇。價格依專案範疇報價。",
     },
     about: {
@@ -242,7 +242,7 @@ const zh = {
       id: "poc",
       name: "PoC 輕量體驗包",
       positioning: "快速驗證可行性",
-      items: ["單一私有知識庫建置（RAG）", "LINE OA 或 Web Widget 串接", "1 條核心流程驗證"],
+      items: ["單一私有知識庫建置（RAG）", "LINE OA 或 Web Widget 串接", "一條核心流程驗證"],
       timeline: "1 ~ 2 週",
       setup: "NT$30,000–60,000",
       setupSuffix: "",
@@ -278,7 +278,7 @@ const zh = {
   contact: {
     eyebrow: "CONTACT",
     title: "預約 30 分鐘免費 AI 轉型健檢",
-    lead: "留下聯絡方式，我們會在 1 個工作天內回覆。",
+    lead: "留下聯絡方式，我們會在一個工作天內回覆。",
     name: "姓名",
     company: "公司名稱",
     email: "Email",
