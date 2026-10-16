@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto_Mono, Syne } from "next/font/google";
+import { Roboto_Mono, Unbounded } from "next/font/google";
 import { TriggerPage } from "./TriggerPage";
 import "./trigger.css";
 
-const display = Syne({
+const display = Unbounded({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["700", "800", "900"],
   variable: "--tg-display",
 });
 

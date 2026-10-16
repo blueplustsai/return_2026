@@ -402,8 +402,26 @@ export function TriggerPage() {
       ) : null}
 
       <main id="top">
-        <section className="tg-hero" aria-label="Introduction">
-          <div className="tg-hero-copy">
+        <section className="tg-open" id="works" aria-label="Selected works">
+          <div className="tg-wall">
+            <div className="tg-wall-col">
+              {projects.filter((_, index) => index % 2 === 0).map((item) => (
+                <button key={item.title} className={`tg-tile ${item.tone}`} type="button" onClick={() => setProject(item)}>
+                  <span>{item.cat}</span>
+                  <strong>{item.title}</strong>
+                </button>
+              ))}
+            </div>
+            <div className="tg-wall-col is-offset">
+              {projects.filter((_, index) => index % 2 === 1).map((item) => (
+                <button key={item.title} className={`tg-tile ${item.tone}`} type="button" onClick={() => setProject(item)}>
+                  <span>{item.cat}</span>
+                  <strong>{item.title}</strong>
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="tg-namepanel">
             <h1 className="tg-title">
               <span>Adrian</span>
               <span>Kessler</span>
@@ -413,57 +431,27 @@ export function TriggerPage() {
               <br />
               and art director
             </p>
-          </div>
-          <div className="tg-hero-foot">
-            <div className="tg-hero-meta">
-              <div>
-                Selected works
-                <br />
-                2023 – 2026
-              </div>
-              <div>
-                Now based in Portland, OR,
-                <br />
-                <span className="tg-clock">
-                  <b>{clock}</b>
-                  <span className="tg-colon"> </span>
-                  {meridiem}
-                </span>
-              </div>
-            </div>
-            <button className="tg-scroll" type="button" onClick={() => scrollToId("works")}>
-              Scroll <i />
-            </button>
-          </div>
-        </section>
-
-        <section className="tg-section" id="works" aria-labelledby="works-title">
-          <h2 id="works-title" className="tg-sr" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden" }}>
-            Latest projects
-          </h2>
-          <Marquee label="Latest projects" />
-          <div className="tg-grid">
-            {projects.map((item) => (
-              <button key={item.title} className="tg-card" type="button" onClick={() => setProject(item)}>
-                <span className={`tg-card-media ${item.tone}`} />
-                <span className="tg-card-shade" />
-                <span className="tg-card-top">
-                  <span>{item.cat}</span>
-                  <span>{item.years}</span>
-                </span>
-                <span className="tg-card-bottom">
-                  <span className="tg-card-title">{item.title}</span>
-                  <span className="tg-round">
-                    <Arrow />
+            <div className="tg-hero-foot">
+              <div className="tg-hero-meta">
+                <div>
+                  Selected works
+                  <br />
+                  2023 – 2026
+                </div>
+                <div>
+                  Now based in Portland, OR,
+                  <br />
+                  <span className="tg-clock">
+                    <b>{clock}</b>
+                    <span className="tg-colon"> </span>
+                    {meridiem}
                   </span>
-                </span>
+                </div>
+              </div>
+              <button className="tg-scroll" type="button" onClick={() => scrollToId("services")}>
+                Scroll <i />
               </button>
-            ))}
-          </div>
-          <div className="tg-center">
-            <button className="tg-pill" type="button" onClick={() => scrollToId("works")}>
-              All works
-            </button>
+            </div>
           </div>
         </section>
 

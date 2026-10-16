@@ -104,6 +104,10 @@ export function BrickzPage() {
   const [news, setNews] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [hero, setHero] = useState({ name: "", email: "", phone: "", topic: "", message: "" });
+  const [heroSent, setHeroSent] = useState(false);
+  const [heroErrors, setHeroErrors] = useState<Record<string, string>>({});
+  const [searchOpen, setSearchOpen] = useState(false);
   const year = useMemo(() => new Date().getFullYear(), []);
 
   useEffect(() => {
@@ -159,6 +163,19 @@ export function BrickzPage() {
     window.setTimeout(() => scrollToId(id), 30);
   }
 
+  function submitHero(event: FormEvent) {
+    event.preventDefault();
+    const next: Record<string, string> = {};
+    if (hero.name.trim().length < 2) next.name = "Add your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(hero.email)) next.email = "Use a valid email.";
+    if (hero.phone.trim().length < 7) next.phone = "Add a phone number.";
+    if (!hero.topic) next.topic = "Choose a type.";
+    if (hero.message.trim().length < 8) next.message = "Add a short note.";
+    setHeroErrors(next);
+    if (Object.keys(next).length) return;
+    setHeroSent(true);
+  }
+
   function submit(event: FormEvent) {
     event.preventDefault();
     const next: Record<string, string> = {};
@@ -175,8 +192,21 @@ export function BrickzPage() {
     <div ref={rootRef}>
       <div className="bz-top">
         <div className="bz-top-inner">
-          <a href="tel:+15035550199">Call us: +1 503 555 0199</a>
-          <a className="bz-top-mail" href="mailto:hello@fieldstone.example">Send mail: hello@fieldstone.example</a>
+          <p>
+            A marked lot is enough to begin.
+            {" "}
+            <button type="button" onClick={() => go("home")}>Start a walk</button>
+          </p>
+          <div className="bz-top-meta">
+            <a href="tel:+15035550199">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h3l1.5 4-2 1.5a12 12 0 0 0 6 6L17 13l4 1.5V18a2 2 0 0 1-2 2A15 15 0 0 1 4 5a2 2 0 0 1 2-2z" /></svg>
+              +1 503 555 0199
+            </a>
+            <a href="mailto:hello@fieldstone.example">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 6l9 7 9-7" /></svg>
+              hello@fieldstone.example
+            </a>
+          </div>
         </div>
       </div>
       <header className={`bz-header${stuck ? " is-stuck" : ""}`}>
@@ -184,7 +214,7 @@ export function BrickzPage() {
           <a className="bz-logo" href="#home" onClick={(event) => { event.preventDefault(); go("home"); }}>
             <span className="bz-mark" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 18 18">
-                <path d="M2 8 L9 2 L16 8 V16 H2 Z" fill="none" stroke="#1c1c1d" strokeWidth="1.6" />
+                <path d="M2 8 L9 2 L16 8 V16 H2 Z" fill="none" stroke="#2b2b2b" strokeWidth="1.6" />
               </svg>
             </span>
             Fieldstone
@@ -198,11 +228,28 @@ export function BrickzPage() {
               </li>
             ))}
           </ul>
-          <button className="bz-btn" type="button" onClick={() => go("contact")}>Book a walkthrough</button>
-          <button className="bz-burger" type="button" aria-label="Open menu" onClick={() => setOpen(true)}>
-            <span />
-          </button>
+          <div className="bz-nav-tools">
+            <button className="bz-navcta" type="button" onClick={() => go("home")}>
+              <span className="bz-quote-label">Free site quote</span>
+              <span className="bz-arrowbox" aria-hidden="true">→</span>
+            </button>
+            <button className="bz-icon" type="button" aria-label="Search" aria-expanded={searchOpen} onClick={() => setSearchOpen((value) => !value)}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6" /><path d="M16 16l5 5" /></svg>
+            </button>
+            <button className="bz-burger" type="button" aria-label="Open menu" onClick={() => setOpen(true)}>
+              <span />
+            </button>
+          </div>
         </div>
+        {searchOpen ? (
+          <form className="bz-search" onSubmit={(event) => { event.preventDefault(); setSearchOpen(false); go("projects"); }}>
+            <label>
+              Search the page
+              <input name="q" placeholder="Projects, services, journal" />
+            </label>
+            <button className="bz-btn dark" type="submit">Find</button>
+          </form>
+        ) : null}
       </header>
 
       {open ? (
@@ -222,21 +269,65 @@ export function BrickzPage() {
       ) : null}
 
       <main>
-        <section className="bz-wrap bz-hero" id="home">
-          <div>
-            <p className="bz-kicker"><i /> Urban builds, one page</p>
-            <h1>Steady building partners, on site</h1>
-            <p className="bz-lead">Every lot has its own ground, so the plan is drawn around that ground instead of a single template.</p>
-            <div className="bz-hero-actions">
-              <button className="bz-btn" type="button" onClick={() => go("contact")}>Free first meeting</button>
-              <button className="bz-linkish" type="button" onClick={() => go("contact")}>Talk with the desk →</button>
+        <section className="bz-hero" id="home">
+          <div className="bz-hero-grid">
+            <div className="bz-hero-left">
+              <div className="bz-photo" role="img" aria-label="Placeholder of a wide job-site frame" />
+              <div className="bz-hero-copy">
+                <h1>Steady building partners, on site</h1>
+                <hr />
+                <p>Every lot has its own ground, so the plan is drawn around that ground instead of a single template.</p>
+                <button className="bz-outline" type="button" onClick={() => go("services")}>
+                  Walk the site
+                  <span className="bz-arrowbox" aria-hidden="true">→</span>
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="bz-hero-visual" role="img" aria-label="Placeholder skyline of a job site">
-            <div className="bz-badge">
-              <strong>25+</strong>
-              years on active sites
-            </div>
+            <aside className="bz-overlap" aria-label="Opening note">
+              <div className="bz-overlap-head">
+                <p>Site desk</p>
+                <h2>Tell us the lot</h2>
+                <p>A short note on timing, access, and the budget band is enough to open the file.</p>
+              </div>
+              {heroSent ? (
+                <p className="bz-overlap-done" role="status">Noted on this page only. Nothing was sent.</p>
+              ) : (
+                <form className="bz-hero-form" onSubmit={submitHero} noValidate>
+                  <label>
+                    Your name
+                    <input value={hero.name} onChange={(event) => setHero({ ...hero, name: event.target.value })} autoComplete="name" />
+                    {heroErrors.name ? <span className="err">{heroErrors.name}</span> : null}
+                  </label>
+                  <label>
+                    Your email
+                    <input type="email" value={hero.email} onChange={(event) => setHero({ ...hero, email: event.target.value })} autoComplete="email" />
+                    {heroErrors.email ? <span className="err">{heroErrors.email}</span> : null}
+                  </label>
+                  <label>
+                    Your phone
+                    <input value={hero.phone} onChange={(event) => setHero({ ...hero, phone: event.target.value })} autoComplete="tel" />
+                    {heroErrors.phone ? <span className="err">{heroErrors.phone}</span> : null}
+                  </label>
+                  <label>
+                    Work type
+                    <select value={hero.topic} onChange={(event) => setHero({ ...hero, topic: event.target.value })}>
+                      <option value="">Select a type</option>
+                      <option>House</option>
+                      <option>Commercial</option>
+                      <option>Yard</option>
+                      <option>Other</option>
+                    </select>
+                    {heroErrors.topic ? <span className="err">{heroErrors.topic}</span> : null}
+                  </label>
+                  <label className="full">
+                    Your message
+                    <textarea value={hero.message} onChange={(event) => setHero({ ...hero, message: event.target.value })} />
+                    {heroErrors.message ? <span className="err">{heroErrors.message}</span> : null}
+                  </label>
+                  <button className="bz-hero-submit" type="submit">Send the note</button>
+                </form>
+              )}
+            </aside>
           </div>
         </section>
 
