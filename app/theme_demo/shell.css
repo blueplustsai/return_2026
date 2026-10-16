@@ -1,0 +1,27 @@
+.theme-demo-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  overflow: hidden;
+  background: #0c0c0e;
+  color: #cccccc;
+}
+
+.theme-demo-frame {
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+html:has(.theme-demo-shell) #dify-chatbot-bubble-button,
+html:has(.theme-demo-shell) #dify-chatbot-bubble-window,
+html:has(.theme-demo-shell) [data-theme-demo-hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-demo-frame {
+    scroll-behavior: auto;
+  }
+}
